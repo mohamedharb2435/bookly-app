@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-import '../../../../home/presentation/views/home_page.dart';
+import '../../../../home/presentation/views/home-view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -53,7 +53,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2),(){
-      Get.to(()=>const HomePage(),
+      Get.to(()=>const HomeView(),
           transition:Transition.fade,duration: kTranstionDuration
       );
     });
