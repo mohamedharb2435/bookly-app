@@ -1,4 +1,5 @@
 import 'package:bookly_app/features/home/presentation/views/widget/custom-app-bar.dart';
+import 'package:bookly_app/features/home/presentation/views/widget/custom-list-view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -6,13 +7,12 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [
-           CustomAppBar()
-      ],),
-    );
+    return const Column(
+        children:  [
+          CustomAppBar(),
+          CustomListViewItem(),
+        ],
+      );
   }
 }
-
 
