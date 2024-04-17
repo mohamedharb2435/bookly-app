@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'widget/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {
