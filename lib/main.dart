@@ -7,13 +7,13 @@ void main() {
 }
 
 class Bookly extends StatelessWidget {
-  const Bookly({Key? key}) : super(key: key);
+  const Bookly({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor),
+      theme: ThemeData.light().copyWith(scaffoldBackgroundColor: kPrimaryColor),
       debugShowCheckedModeBanner: false,
       home:const SplashView(),
     );
