@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 24),
+      padding:  EdgeInsets.symmetric(horizontal: 30),
       child:  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
           children:  [
@@ -50,7 +50,18 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-        )
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width*.6,
+          child:const  Column(
+            children:[
+              Text('Harry Potter and The Global of Fire',
+              style: Styles.textStyle20,
+                maxLines: 2,
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
