@@ -1,11 +1,10 @@
-import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widget/best-seller-list-view-iteam.dart';
 import 'package:bookly_app/features/home/presentation/views/widget/custom-app-bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widget/featured-list-view.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../../core/utils/assets.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -25,12 +24,12 @@ class HomeViewBody extends StatelessWidget {
             ),
             SizedBox(height: 20,),
             BestSellerListViewItem(),
+
           ],
         ),
     );
   }
 }
-
 
 
 
