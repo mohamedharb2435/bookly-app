@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-
 import '../../../../home/presentation/views/home-view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -46,9 +45,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initSlidingAnimation() {
     animationController=AnimationController(
         vsync: this ,
-        duration: const Duration(seconds: 1));
+        duration: const Duration(seconds: 3));
     slidingAnimation=Tween<Offset>
-      (begin:const Offset(0,15),end:const  Offset(0,0)).animate(animationController);
+      (begin:const Offset(0,2),end:const  Offset(0,0)).animate(animationController);
     animationController.forward();
   }
   void navigateToHome() {
