@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
