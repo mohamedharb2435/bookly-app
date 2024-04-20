@@ -1,5 +1,5 @@
-class BookModel {
-  BookModel({
+class BookMode {
+  BookMode({
       this.kind, 
       this.id, 
       this.etag, 
@@ -9,7 +9,7 @@ class BookModel {
       this.accessInfo, 
       this.searchInfo,});
 
-  BookModel.fromJson(dynamic json) {
+  BookMode.fromJson(dynamic json) {
     kind = json['kind'];
     id = json['id'];
     etag = json['etag'];
@@ -19,14 +19,14 @@ class BookModel {
     accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
     searchInfo = json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
   }
-  String kind;
-  String id;
-  String etag;
-  String selfLink;
-  VolumeInfo volumeInfo;
-  SaleInfo saleInfo;
-  AccessInfo accessInfo;
-  SearchInfo searchInfo;
+  String? kind;
+  String? id;
+  String? etag;
+  String? selfLink;
+  VolumeInfo? volumeInfo;
+  SaleInfo? saleInfo;
+  AccessInfo? accessInfo;
+  SearchInfo? searchInfo;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -35,16 +35,16 @@ class BookModel {
     map['etag'] = etag;
     map['selfLink'] = selfLink;
     if (volumeInfo != null) {
-      map['volumeInfo'] = volumeInfo.toJson();
+      map['volumeInfo'] = volumeInfo?.toJson();
     }
     if (saleInfo != null) {
-      map['saleInfo'] = saleInfo.toJson();
+      map['saleInfo'] = saleInfo?.toJson();
     }
     if (accessInfo != null) {
-      map['accessInfo'] = accessInfo.toJson();
+      map['accessInfo'] = accessInfo?.toJson();
     }
     if (searchInfo != null) {
-      map['searchInfo'] = searchInfo.toJson();
+      map['searchInfo'] = searchInfo?.toJson();
     }
     return map;
   }
@@ -58,7 +58,7 @@ class SearchInfo {
   SearchInfo.fromJson(dynamic json) {
     textSnippet = json['textSnippet'];
   }
-  String textSnippet;
+  String? textSnippet;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -93,16 +93,16 @@ class AccessInfo {
     accessViewStatus = json['accessViewStatus'];
     quoteSharingAllowed = json['quoteSharingAllowed'];
   }
-  String country;
-  String viewability;
-  bool embeddable;
-  bool publicDomain;
-  String textToSpeechPermission;
-  Epub epub;
-  Pdf pdf;
-  String webReaderLink;
-  String accessViewStatus;
-  bool quoteSharingAllowed;
+  String? country;
+  String? viewability;
+  bool? embeddable;
+  bool? publicDomain;
+  String? textToSpeechPermission;
+  Epub? epub;
+  Pdf? pdf;
+  String? webReaderLink;
+  String? accessViewStatus;
+  bool? quoteSharingAllowed;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -112,10 +112,10 @@ class AccessInfo {
     map['publicDomain'] = publicDomain;
     map['textToSpeechPermission'] = textToSpeechPermission;
     if (epub != null) {
-      map['epub'] = epub.toJson();
+      map['epub'] = epub?.toJson();
     }
     if (pdf != null) {
-      map['pdf'] = pdf.toJson();
+      map['pdf'] = pdf?.toJson();
     }
     map['webReaderLink'] = webReaderLink;
     map['accessViewStatus'] = accessViewStatus;
@@ -134,8 +134,8 @@ class Pdf {
     isAvailable = json['isAvailable'];
     acsTokenLink = json['acsTokenLink'];
   }
-  bool isAvailable;
-  String acsTokenLink;
+  bool? isAvailable;
+  String? acsTokenLink;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -153,7 +153,7 @@ class Epub {
   Epub.fromJson(dynamic json) {
     isAvailable = json['isAvailable'];
   }
-  bool isAvailable;
+  bool? isAvailable;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -174,9 +174,9 @@ class SaleInfo {
     saleability = json['saleability'];
     isEbook = json['isEbook'];
   }
-  String country;
-  String saleability;
-  bool isEbook;
+  String? country;
+  String? saleability;
+  bool? isEbook;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -219,7 +219,7 @@ class VolumeInfo {
     if (json['industryIdentifiers'] != null) {
       industryIdentifiers = [];
       json['industryIdentifiers'].forEach((v) {
-        industryIdentifiers.add(IndustryIdentifiers.fromJson(v));
+        industryIdentifiers?.add(IndustryIdentifiers.fromJson(v));
       });
     }
     readingModes = json['readingModes'] != null ? ReadingModes.fromJson(json['readingModes']) : null;
@@ -236,25 +236,25 @@ class VolumeInfo {
     infoLink = json['infoLink'];
     canonicalVolumeLink = json['canonicalVolumeLink'];
   }
-  String title;
-  List<String> authors;
-  String publisher;
-  String publishedDate;
-  String description;
-  List<IndustryIdentifiers> industryIdentifiers;
-  ReadingModes readingModes;
-  int pageCount;
-  String printType;
-  List<String> categories;
-  String maturityRating;
-  bool allowAnonLogging;
-  String contentVersion;
-  PanelizationSummary panelizationSummary;
-  ImageLinks imageLinks;
-  String language;
-  String previewLink;
-  String infoLink;
-  String canonicalVolumeLink;
+  String? title;
+  List<String>? authors;
+  String? publisher;
+  String? publishedDate;
+  String? description;
+  List<IndustryIdentifiers>? industryIdentifiers;
+  ReadingModes? readingModes;
+  int? pageCount;
+  String? printType;
+  List<String>? categories;
+  String? maturityRating;
+  bool? allowAnonLogging;
+  String? contentVersion;
+  PanelizationSummary? panelizationSummary;
+  ImageLinks? imageLinks;
+  String? language;
+  String? previewLink;
+  String? infoLink;
+  String? canonicalVolumeLink;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -264,10 +264,10 @@ class VolumeInfo {
     map['publishedDate'] = publishedDate;
     map['description'] = description;
     if (industryIdentifiers != null) {
-      map['industryIdentifiers'] = industryIdentifiers.map((v) => v.toJson()).toList();
+      map['industryIdentifiers'] = industryIdentifiers?.map((v) => v.toJson()).toList();
     }
     if (readingModes != null) {
-      map['readingModes'] = readingModes.toJson();
+      map['readingModes'] = readingModes?.toJson();
     }
     map['pageCount'] = pageCount;
     map['printType'] = printType;
@@ -276,10 +276,10 @@ class VolumeInfo {
     map['allowAnonLogging'] = allowAnonLogging;
     map['contentVersion'] = contentVersion;
     if (panelizationSummary != null) {
-      map['panelizationSummary'] = panelizationSummary.toJson();
+      map['panelizationSummary'] = panelizationSummary?.toJson();
     }
     if (imageLinks != null) {
-      map['imageLinks'] = imageLinks.toJson();
+      map['imageLinks'] = imageLinks?.toJson();
     }
     map['language'] = language;
     map['previewLink'] = previewLink;
@@ -299,8 +299,8 @@ class ImageLinks {
     smallThumbnail = json['smallThumbnail'];
     thumbnail = json['thumbnail'];
   }
-  String smallThumbnail;
-  String thumbnail;
+  String? smallThumbnail;
+  String? thumbnail;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -320,8 +320,8 @@ class PanelizationSummary {
     containsEpubBubbles = json['containsEpubBubbles'];
     containsImageBubbles = json['containsImageBubbles'];
   }
-  bool containsEpubBubbles;
-  bool containsImageBubbles;
+  bool? containsEpubBubbles;
+  bool? containsImageBubbles;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -341,8 +341,8 @@ class ReadingModes {
     text = json['text'];
     image = json['image'];
   }
-  bool text;
-  bool image;
+  bool? text;
+  bool? image;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -362,8 +362,8 @@ class IndustryIdentifiers {
     type = json['type'];
     identifier = json['identifier'];
   }
-  String type;
-  String identifier;
+  String? type;
+  String? identifier;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
