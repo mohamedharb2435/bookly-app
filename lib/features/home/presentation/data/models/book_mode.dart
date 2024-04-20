@@ -1,5 +1,5 @@
-class BookMode {
-  BookMode({
+class BookModel {
+  BookModel({
       this.kind, 
       this.id, 
       this.etag, 
@@ -9,7 +9,7 @@ class BookMode {
       this.accessInfo, 
       this.searchInfo,});
 
-  BookMode.fromJson(dynamic json) {
+  BookModel.fromJson(dynamic json) {
     kind = json['kind'];
     id = json['id'];
     etag = json['etag'];
