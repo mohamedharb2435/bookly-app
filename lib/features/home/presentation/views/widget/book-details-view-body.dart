@@ -1,10 +1,11 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/utils/widgets/custom-button.dart';
 import 'package:bookly_app/features/home/presentation/views/widget/booking_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widget/custom-book-details-app-bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'books-actions.dart';
 import 'custom-book-item.dart';
+import 'similar-books-list-view.dart';
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
@@ -20,7 +21,7 @@ class BookDetailsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal:width*.2 ),
             child: const CustomBookItem(),
           ),
-          const SizedBox(height: 43,),
+          const SizedBox(height: 35,),
           Text('The Jungle Book',style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.bold,
           ),),
@@ -36,48 +37,23 @@ class BookDetailsViewBody extends StatelessWidget {
           const BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          const SizedBox(height: 37,),
+          const SizedBox(height: 35,),
           const BooksAction(),
+          const SizedBox(height: 40,),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text('You Can alo Like',style: Styles.textStyle14.copyWith(
+              fontWeight: FontWeight.w700 ,
+            ),),
+          ),
+          const SizedBox(height: 16,),
+          const SimilarBooksListView(),
+          const SizedBox(height: 20,),
         ],
       ),
     );
   }
 }
-class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 8),
-      child: Row(
-        children: [
-          Expanded(
-            child: CustomButton(
-                backGround: Colors.white,
-                textColor: Colors.black,
-                text:'19.9%',
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomLeft:  Radius.circular(16),
-              ),
-            ),
-          ),
-          Expanded(
-            child: CustomButton(
-              backGround: Color(0xffEF8262),
-              textColor: Colors.white,
-              text:'Free Preview',
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(16),
-                bottomRight:  Radius.circular(16),
-              ),
-              fontSize: 16,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+
 
