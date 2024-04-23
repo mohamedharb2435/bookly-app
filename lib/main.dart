@@ -23,7 +23,9 @@ class Bookly extends StatelessWidget {
       providers: [
         BlocProvider(create:(context)=>FeaturedBooksCubit(
         getIt.get<HomeRepoImp>(),
-        ),),
+          // ..fetchFeaturedBooks()-- بينفذ الكود بعد مابينشئ البلوك
+        )..fetchFeaturedBooks(),
+        ),
         BlocProvider(create:(context)=>NewestBooksCubit(
           getIt.get<HomeRepoImp>(),
         ),),
